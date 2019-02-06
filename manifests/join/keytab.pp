@@ -13,7 +13,7 @@ class realmd::join::keytab {
   $_manage_krb_config = $::realmd::manage_krb_config
   $_ou                = $::realmd::ou
 
-  $_krb_config_final = deep_merge({'libdefaults' => {'default_realm' => upcase($::domain)}}, $_krb_config)
+  $_krb_config_final = deep_merge({'libdefaults' => {'default_realm' => upcase($_domain)}}, $_krb_config)
 
   file { 'krb_keytab':
     path   => $_krb_keytab,
